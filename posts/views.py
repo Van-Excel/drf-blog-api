@@ -9,12 +9,12 @@ from .permissions import IsAuthorOrReadOnly
 
 
 class PostsDetailView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthorOrReadOnly)
+    permission_classes = (IsAuthorOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 
 class PostsListView(generics.ListCreateAPIView):
-    permission_classes = (IsAuthorOrReadOnly)
+    permission_classes = (IsAuthorOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
